@@ -10,7 +10,7 @@ import os
 load_dotenv()
 
 @api_view(['GET'])
-def getDetails():
+def getDetails(request):
     certificate = Certificate.objects.all()
     serializer = certificateSerializer(certificate, many=True)
     return Response(serializer.data)
